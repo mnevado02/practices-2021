@@ -25,13 +25,3 @@ for f in function_list:
         for gene in gene_list:
             print(f + gene)
             print(c.talk("GENE " + gene) + "\n")
-'''
-print(c.talk("PING"))
-for i in range(5):
-    print(c.talk("GET "+ str(i)))
-print(c.talk("INFO 0"))
-print(c.talk("COMP 0"))
-print(c.talk("REV 0"))
-for gene in gene_list:
-    print("GENE", gene)
-    print(c.talk("GENE " + gene))'''

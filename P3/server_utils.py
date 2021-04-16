@@ -1,5 +1,4 @@
 import Seq1
-from Client0 import Client
 
 def print_colored(message, color):
     import termcolor
