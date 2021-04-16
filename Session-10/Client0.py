@@ -1,6 +1,7 @@
 import socket
-from termcolor import colored
+import termcolor
 import colorama
+
 
 
 class Client:
@@ -32,23 +33,27 @@ class Client:
         s.send(str.encode(msg))
         # Receive data
         response = s.recv(2048).decode("utf-8")
+        print("From server:", response)
         # Close the socket
         s.close()
         # Return the response
         return "From server: " + response
 
     def debug_talk(self, msg):
-        colorama.init(strip= False)
+        colorama.init(strip="False")
         # -- Create the socket
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         # establish the connection to the Server (IP, PORT)
         s.connect((self.ip, self.port))
         # Send data.
-        print("To server:", colored(msg, "blue"))
+        print("To server:", termcolor.colored(msg, "blue"))
         s.send(str.encode(msg))
         # Receive data
-        response = colored(s.recv(2048).decode("utf-8"), "green")
+        response = termcolor.colored(s.recv(2048).decode("utf-8"), "green")
+        print("From server:", termcolor.colored(msg, "yellow"))
         # Close the socket
         s.close()
         # Return the response
         return "From server: " + response
+
+

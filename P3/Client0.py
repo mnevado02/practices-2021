@@ -28,14 +28,13 @@ class Client:
         # establish the connection to the Server (IP, PORT)
         s.connect((self.ip, self.port))
         # Send data.
-        print("To server:", msg)
         s.send(str.encode(msg))
         # Receive data
         response = s.recv(2048).decode("utf-8")
         # Close the socket
         s.close()
         # Return the response
-        return "From server: " + response
+        return response
 
     def debug_talk(self, msg):
         colorama.init(strip= False)
