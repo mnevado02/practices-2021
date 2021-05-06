@@ -97,7 +97,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         else:
             contents = su.read_template_html_file("./html/error.html").render()
 
-        # Message to send back to the clinet
+        # Message to send back to the client
 
         # Generating the response message
         self.send_response(200)  # -- Status line: OK!
