@@ -1,0 +1,85 @@
+No error tests were made in this part because the options in the index are in select mode.
+
+
+--- GENE SEQUENCE ENDPOINT ---
+* TEST 1:
+
+* Input:
+
+http://localhost:8080/geneSeq?gene=RNU6_269P
+
+* Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+    <meta charset="utf-8">
+    <title>Seq server</title>
+  </head>
+  <body>
+    <h1>Gene RNU6_269P</h1>
+    <textarea id="gene_contents" name="gene_bases" rows="25" cols="100">    GCTTCCATAGCACAGACTAAAATTGGAAGGATGCCAAGATGATTAGCATGGTCCCTGCACAAGGATGACATGAATTTTTGAAACATTTCGTATTTTT
+    </textarea>
+    <a href="/">Main page</a>
+
+</body></html>
+
+
+
+--- GENE INFORMATION ENDPOINT ---
+
+* TEST 1:
+
+* Input:
+
+http://localhost:8080/geneInfo?gene=ADA
+
+* Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+    <meta charset="utf-8">
+    <title>Seq server</title>
+  </head>
+  <body>
+    <h1>Gene ADA</h1>
+    <p>Gene id: ENSG00000196839<br>
+    Start: 44619522<br>
+    End: 44652233<br>
+    Length: 32711<br>
+    Chromosome name: GRCh38</p>
+    <a href="/">Main page</a>
+
+</body></html>
+
+
+--- GENE CALCULATIONS ENDPOINT ---
+
+* TEST 1:
+
+* Input:
+
+http://localhost:8080/geneCalc?gene=KDR
+* Output:
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+    <meta charset="utf-8">
+    <title>Seq server</title>
+  </head>
+  <body>
+    <h1>Gene KDR</h1>
+    <p>The length is 47115 nucleotides</p>
+    <p>The percentage of each base is:</p>
+
+        <p>A: 28.2%</p>
+
+        <p>C: 19.18%</p>
+
+        <p>G: 21.51%</p>
+
+        <p>T: 31.11%</p>
+
+    <a href="/">Main page</a>
+
+</body></html>

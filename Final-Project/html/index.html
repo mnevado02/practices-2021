@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome!!</title>
+  </head>
+  <body style="background-color: antiquewhite;">
+    <h1>Browsing Human and Vertebrates Genome</h1>
+    <h2>BASIC Level Services</h2>
+    <p>1) List of species in the genome database</p>
+    <form action="listSpecies" method="get">
+      Limit: <input type="text" name="limit">
+      <input type="submit" value="SEND">
+    </form>
+    <hr>
+    <p>2) Information about the karyotype:</p>
+    <form action="karyotype" method="get">
+      Select the species: <input type="text" name="specie">
+      <input type="submit" value="SEND">
+    </form>
+    <hr>
+    <p>3) Chromosome Length</p>
+    <form action="chromosomeLength" method="get">
+      Select the species: <input type="text" name="specie"><br>
+      Select the chromosome: <input type="text" name="chromo"><br>
+      <input type="submit" value="SEND">
+    </form>
+    <br>
+    <br>
+    <h2>MEDIUM Level Services</h2>
+    {% for name, op in context.dict_operations.items() %}
+      <p>{{name}}</p>
+      <form action="{{op}}" method="get">
+          Select a gene:
+          <select name="gene">
+          {% for n in context.list_genes %}
+            <option value="{{n}}">{{n}}</option>
+          {% endfor %}
+          </select>
+        <input type="submit" value="SUBMIT">
+      </form>
+      <hr>
+    {% endfor %}
+  </body>
+</html>

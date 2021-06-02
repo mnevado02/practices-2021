@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Seq server</title>
+  </head>
+  <body>
+    <h1>Gene {{context.gene_name}}</h1>
+    <p>The length is {{context.length}} nucleotides</p>
+    <p>The percentage of each base is:</p>
+    {% for k, v in context.perc_dict.items() %}
+        <p>{{k}}: {{v}}%</p>
+    {% endfor %}
+    <a href="/">Main page</a>
+  </body>
+</html>

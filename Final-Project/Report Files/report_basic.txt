@@ -1,0 +1,211 @@
+--- LIST SPECIES ENDPOINT ---
+* TEST 1:
+
+* Input:
+
+http://localhost:8080/listSpecies?limit=3
+
+* Output:
+
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>List of species</title>
+</head>
+<body>
+<a href="/">Main page</a>
+<p>Total number of species in the server: 310</p>
+<p>Number of species chosen: 3</p>
+<p>The species you have chosen are:</p>
+<ul>
+
+        <li>Little spotted kiwi</li>
+
+        <li>Indian glassy fish</li>
+
+        <li>Blue tit</li>
+
+</ul>
+
+
+</body></html>
+
+
+* TEST 2:
+
+* Input:
+http://localhost:8080/listSpecies?limit=lksdga
+
+* Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+    <meta charset="utf-8">
+    <title>ERROR</title>
+  </head>
+  <body style="background-color: red;">
+    <h1>ERROR</h1>
+    <p>Resource not available</p>
+    <p>Specific error: Need an integer for limit parameter</p>
+    <a href="/">Main page</a>
+
+</body></html>
+
+
+--- KARYOTYPE ENDPOINT ---
+
+* TEST 1:
+
+* Input:
+
+http://localhost:8080/karyotype?specie=human
+
+* Output:
+
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Karyotype</title>
+</head>
+<body>
+<p>The names of the chromosomes are:</p>
+<ul>
+
+        1<br>
+
+        2<br>
+
+        3<br>
+
+        4<br>
+
+        5<br>
+
+        6<br>
+
+        7<br>
+
+        8<br>
+
+        9<br>
+
+        10<br>
+
+        11<br>
+
+        12<br>
+
+        13<br>
+
+        14<br>
+
+        15<br>
+
+        16<br>
+
+        17<br>
+
+        18<br>
+
+        19<br>
+
+        20<br>
+
+        21<br>
+
+        22<br>
+
+        X<br>
+
+        Y<br>
+
+        MT<br>
+
+</ul>
+<a href="/">Main page</a>
+
+</body></html>
+
+
+* TEST 2:
+* Input:
+
+http://localhost:8080/karyotype?specie=09
+
+* Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+    <meta charset="utf-8">
+    <title>ERROR</title>
+  </head>
+  <body style="background-color: red;">
+    <h1>ERROR</h1>
+    <p>Resource not available</p>
+    <p>Specific error: Need the name of a valid species for karyotype</p>
+    <a href="/">Main page</a>
+
+</body></html>
+
+
+--- CHROMOSOME LENGTH ENDPOINT ---
+
+* TEST 1:
+
+* Input:
+
+http://localhost:8080/chromosomeLength?specie=mouse&chromo=5
+
+* Output:
+
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>List of species</title>
+</head>
+<body>
+<a href="/">Main page</a>
+<p>The length of the chromosome is: 151758149</p>
+
+</body></html>
+
+* TEST 2:
+
+* Input:
+
+http://localhost:8080/chromosomeLength?specie=ant&chromo=k
+
+* Output:
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+    <meta charset="utf-8">
+    <title>ERROR</title>
+  </head>
+  <body style="background-color: red;">
+    <h1>ERROR</h1>
+    <p>Resource not available</p>
+    <p>Specific error: Need the name of a valid species and chromosome</p>
+    <a href="/">Main page</a>
+
+</body></html>
+
+* TEST 3:
+
+* Input:
+
+http://localhost:8080/chromosomeLength?specie=human&chromo=k
+
+* Output:
+
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>List of species</title>
+</head>
+<body>
+<a href="/">Main page</a>
+<p>The length of the chromosome is: </p>
+
+</body></html>
+

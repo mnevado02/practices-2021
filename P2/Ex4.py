@@ -1,4 +1,4 @@
-from Client0 import Client
+from Client1 import Client
 import termcolor
 
 PRACTICE = 2

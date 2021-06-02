@@ -2,7 +2,7 @@ import http.server
 import socketserver
 import termcolor
 from urllib.parse import urlparse, parse_qs
-import server_utils as su
+import utils as su
 
 
 
@@ -61,11 +61,7 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
         arguments = parse_qs(o.query)
         print("Resource requested:", path_name)
         print("Parameters:", arguments)
-        # IN this simple server version:
-        # We are NOT processing the client's request
-        # It is a happy server: It always returns a message saying
-        # that everything is ok
-        #self.path = self.path.split(".")[0]
+
         context = {}
         if path_name == "/":
             context["n_sequences"] = len(LIST_SEQUENCES)
@@ -89,13 +85,13 @@ class TestHandler(http.server.BaseHTTPRequestHandler):
                 sequence = ""
             operation = arguments["calculation"][0]
             if operation == "Info":
-                contents = su.info(sequence)
+                contents = su.calc(sequence)
             elif operation == "Rev":
                 contents = su.rev(sequence)
             elif operation == "Comp":
                 contents = su.comp(sequence)
         else:
-            contents = su.read_template_html_file("./html/error.html").render()
+            contents = su.read_template_html_file("html/error.html").render()
 
         # Message to send back to the client
 

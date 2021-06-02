@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Karyotype</title>
+</head>
+<body>
+<p>The names of the chromosomes are:</p>
+<ul>
+    {% for e in context.list_karyotype %}
+        {{e}}<br>
+    {% endfor %}
+</ul>
+<a href="/">Main page</a>
+</body>
+</html>

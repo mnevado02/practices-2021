@@ -1,4 +1,4 @@
-import Client0
+import Client1
 
 
 print("-----| Practice 3, Exercise 7 |-----")
@@ -8,7 +8,7 @@ PORT = 8080
 gene_list = ["ADA", "FRAT1", "FXN", "RNU6_269P", "U5"]
 function_list = ["PING", "GET ", "INFO 0", "COMP 0", "REV 0", "GENE "]
 
-c = Client0.Client(IP, PORT)
+c = Client1.Client(IP, PORT)
 print(c)
 for f in function_list:
     print_f = f.split(" ")[0]

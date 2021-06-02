@@ -27,6 +27,7 @@ for gene in DICT_GENES:
     response = connection.getresponse()
     if response.status == 200:
         response_dict = json.loads(response.read().decode())
+        print(response_dict)
         #print(json.dumps(response_dict, indent=4, sort_keys=True))
         description = response_dict["desc"]
         print("\nGene:", gene)

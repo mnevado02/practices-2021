@@ -1,5 +1,5 @@
 import socket
-import server_utils
+import utils
 
 list_sequences = ["ATTCCGTGTCACT", "AAAAAAATTTTCGGCTAT", "AACCTCGCTAGCTAGCTAG",
                   "ATCTATCGCCCTTTTTTTTAA", "AAACCCAGGGTT"]
@@ -56,7 +56,7 @@ while True:
     # -- into a human-redeable string
     msg = msg_raw.decode()
 
-    formatted_message = server_utils.format_command(msg)
+    formatted_message = utils.format_command(msg)
     formatted_message = formatted_message.split(" ")
     if len(formatted_message) == 1:
         command = formatted_message[0]
@@ -64,21 +64,21 @@ while True:
         command = formatted_message[0]
         argument = formatted_message[1]
     if command == "PING":
-        server_utils.ping()
+        utils.ping()
         # -- Send a response message to the client
         response = "OK!"
         # -- The message has to be encoded into bytes
         cs.send(str(response).encode())
     elif command == "GET":
-        server_utils.get(cs, list_sequences, argument)
+        utils.get(cs, list_sequences, argument)
     elif command == "INFO":
-        server_utils.info(cs, list_sequences, argument)
+        utils.calc(cs)
     elif command == "COMP":
-        server_utils.comp(cs, list_sequences, argument)
+        utils.comp(cs, list_sequences, argument)
     elif command == "REV":
-        server_utils.rev(cs, list_sequences, argument)
+        utils.rev(cs, list_sequences, argument)
     elif command == "GENE":
-        server_utils.gene(cs, argument)
+        utils.gene(cs, argument)
 
     else:
         response = "Not available command"

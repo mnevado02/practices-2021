@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of species</title>
+</head>
+<body>
+<a href="/">Main page</a>
+<p>Total number of species in the server: {{context.length}}</p>
+<p>Number of species chosen: {{context.limit}}</p>
+<p>The species you have chosen are:</p>
+<ul>
+    {% for i in range(context.limit) %}
+        <li>{{context.common_name[i]}}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
